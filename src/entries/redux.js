@@ -1,15 +1,5 @@
 import { createStore } from 'redux'
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const data = new FormData($form);
-  const title = data.get('title');
-  console.log(title);
-}
-
-const $form = document.getElementById('form');
-$form.addEventListener('submit', handleSubmit);
-
 const initialState = [
   {
     "title": "Cancion 1"
@@ -40,3 +30,24 @@ playlist.forEach((play) => {
   template.textContent = play.title
   $container.appendChild(template)
 })
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const data = new FormData($form);
+  const title = data.get('title');
+  console.log(title);
+
+  //new action to dispath to the Store
+  const addSong = {
+    type: 'ADD_SONG',
+    payload: {
+      title: title
+    }
+  }
+
+  // Sending the song to the Store
+  store.dispatch(addSong)
+}
+
+const $form = document.getElementById('form');
+$form.addEventListener('submit', handleSubmit);
