@@ -1,6 +1,5 @@
 import { createStore } from 'redux'
 
-
 const handleSubmit = (event) => {
   event.preventDefault();
   const data = new FormData($form);
@@ -30,3 +29,14 @@ const store = createStore(
   initialState, //  PreloadState / InitialState = Estado inicial de la aplicación, primere carga, llamado al api. Puede ser cualquier tipo de dato
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // Enhancer = función que puede extender redux con capacidades añadidas por librerías externas. Es un parámetro opcional.
 )
+
+console.log(store.getState())
+
+const $container = document.getElementById("playlist")
+const playlist = store.getState()
+
+playlist.forEach((play) => {
+  const template = document.createElement('p')
+  template.textContent = play.title
+  $container.appendChild(template)
+})
