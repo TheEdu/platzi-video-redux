@@ -12,10 +12,17 @@ const initialState = [
   },
 ]
 
+const reducer = function(state, action) {
+  switch (action.type) {
+    case 'ADD_SONG':
+      return [...state, action.payload]
+    default:
+      return state
+  }
+}
+
 const store = createStore(
-  (state) => {
-    return state
-  }, // reducer: función pura que retorna el próximo estado
+  reducer, // reducer: función pura que retorna el próximo estado
   initialState, //  PreloadState / InitialState = Estado inicial de la aplicación, primere carga, llamado al api. Puede ser cualquier tipo de dato
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // Enhancer = función que puede extender redux con capacidades añadidas por librerías externas. Es un parámetro opcional.
 )
