@@ -29,14 +29,27 @@ const store = createStore(
 
 console.log(store.getState())
 
-const $container = document.getElementById("playlist")
-const playlist = store.getState()
 
-playlist.forEach((play) => {
-  const template = document.createElement('p')
-  template.textContent = play.title
-  $container.appendChild(template)
-})
+const render = () => {
+  const $container = document.getElementById("playlist")
+  $container.innerHTML = ''
+  const playlist = store.getState()
+
+  playlist.forEach((play) => {
+    const template = document.createElement('p')
+    template.textContent = play.title
+    $container.appendChild(template)
+  })
+}
+
+render()
+
+
+const handleChange = (event) => {
+  render()
+}
+
+store.subscribe(handleChange)
 
 const handleSubmit = (event) => {
   event.preventDefault();
