@@ -5,6 +5,8 @@ const data = (state, action) => {
             const categories = state.data.categories
 
             let results = []
+            
+            query &&
             categories
                 .map( cat => cat.playlist
                                 .filter( media =>

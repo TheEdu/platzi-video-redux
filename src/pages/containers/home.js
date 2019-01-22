@@ -30,6 +30,7 @@ class Home extends Component {
                     <Categories
                         categories = { categories }
                         handleOpenModal = { this.handleModalToggle }
+                        search={ this.props.search }
                     />
                     {
                         // If ternario
@@ -54,7 +55,8 @@ class Home extends Component {
 
 const mapStateToProps = (state, props) => {
     return {
-        categories: state.data.categories
+        categories: state.data.categories,
+        search: state.search
     }
 }
 

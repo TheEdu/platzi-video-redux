@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class SearchContainer extends Component {
 
   state = {
-    value: "Luis-Fonsi"
+    value: "Leonidas"
   }
 
   handleSubmit = event => {

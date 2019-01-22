@@ -11,7 +11,7 @@ const initialState = {
     data: {
         ...data
     },
-    search: []
+    search: [],
 }
 
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
