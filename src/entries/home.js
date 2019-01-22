@@ -4,6 +4,7 @@ import data from './../api/categories.json'
 import Home from './../pages/containers/home'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import reducer from './../reducers/data'
 
 
 const initialState = {
@@ -15,7 +16,7 @@ const initialState = {
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const store = createStore(
-    (state) => state,
+    reducer,
     initialState,
     enhancer
 )
