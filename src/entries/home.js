@@ -12,7 +12,9 @@ console.log(normalizedData)
 
 const initialState = {
     data: {
-        ...data
+        //...data
+        entities: normalizedData.entities,
+        categories: normalizedData.result.categories
     },
     search: [],
 }
