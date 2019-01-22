@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Media from './media.js'
+import MediaContainer from './../containers/media.js'
 import './playlist.css'
 
 class Playlist extends Component {
@@ -10,12 +10,12 @@ class Playlist extends Component {
     return (
       <div className="Playlist">
         {
-          playlist.map((item) => {
+          playlist.map((mediaId) => {
             return (
-              <Media 
-                {...item} 
-                key={item.id}
-                openModal = { this.props.handleOpenModal }
+              <MediaContainer
+                id={mediaId}
+                key={mediaId}
+                handleOpenModal = { this.props.handleOpenModal }
               />
             )
           })
