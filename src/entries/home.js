@@ -10,7 +10,8 @@ import reducer from './../reducers/data'
 const initialState = {
     data: {
         ...data
-    }
+    },
+    search: []
 }
 
 const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
