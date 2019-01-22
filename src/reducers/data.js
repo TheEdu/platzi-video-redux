@@ -1,4 +1,12 @@
-const data = (state, action) => {
+import normalizedData from './../schemas'
+
+const initialState = {
+    entities: normalizedData.entities,
+    categories: normalizedData.result.categories,
+    search: [],
+}
+
+const data = (state = initialState, action) => {
     switch (action.type) {
         case 'SEARCH_VIDEO': {
             const query = action.payload.query.toLowerCase()
@@ -14,18 +22,6 @@ const data = (state, action) => {
                                             && results.push(media)
                                         )
                     )
-            
-            // // Another Way
-            // let results = []
-            // categories.map( category => {
-            //     results = results.concat(category.playlist)
-            // })
-            
-            // results = results.filter( item => {
-            //     const author = item.author.toLowerCase()
-            //     return author.includes(query)
-            // })
-
             return {
                 ...state,
                 search: results
