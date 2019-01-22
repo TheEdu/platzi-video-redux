@@ -24,7 +24,7 @@ console.log(store.getState())
 
 const home =
     <Provider store={store}>
-        <div> Hola Mundo! </div>
+        <Home />
     </Provider>
 
 const homeContainer = document.getElementById('home-container')
