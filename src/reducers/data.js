@@ -1,10 +1,11 @@
 import normalizedData from './../schemas'
+import { fromJS } from 'immutable'
 
-const initialState = {
+const initialState = fromJS({
     entities: normalizedData.entities,
     categories: normalizedData.result.categories,
     search: [],
-}
+})
 
 const data = (state = initialState, action) => {
     switch (action.type) {

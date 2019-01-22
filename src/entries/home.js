@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './../reducers'
 import normalizedData from './../schemas'
+import { Map as map } from 'immutable'
 
 console.log(normalizedData)
 
@@ -13,7 +14,7 @@ const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
 
 const store = createStore(
     rootReducer,
-    {},
+    map(),
     enhancer
 )
 console.log(store.getState())
