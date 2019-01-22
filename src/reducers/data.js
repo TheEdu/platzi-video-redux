@@ -1,6 +1,6 @@
 const data = (state, action) => {
     switch (action.type) {
-        case 'ACTION_LALALA': {
+        case 'SEARCH_VIDEO': {
             return state;
         }
         default:
