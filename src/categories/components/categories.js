@@ -17,11 +17,11 @@ function Categories(props) {
                 })
             }
             { 
-                props.categories.map((item) => {
+                props.categories.map((category) => {
                     return(
                       <Category 
-                        key={ item.get('id') } 
-                        { ...item.toJS() }
+                        key={ category.get('id') } 
+                        { ...category.toJS() }
                         handleOpenModal = { props.handleOpenModal }
                       />
                     )
